@@ -13,10 +13,10 @@ import static com.codeborne.selenide.Selenide.open;
 public class ChromeTest {
     private WebDriver driver;
 
-    @BeforeAll
-    public static void setupAll(){
-        WebDriverManager.chromedriver().setup();
-    }
+//    @BeforeAll
+//    public static void setupAll(){
+//        WebDriverManager.chromedriver().setup();
+//    }
 
     @BeforeEach
     void setUp() {
