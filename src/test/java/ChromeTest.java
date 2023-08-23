@@ -25,12 +25,12 @@ public class ChromeTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        driver.get("http://localhost:9999");
+        driver.get("http://localhost:9999/");
     }
 
     @Test
     void bankCardPositiveTest() {
-        open("http://localhost:9999");
+        open("http://localhost:9999/");
         $("[data-test-id=name] input").setValue("Дарья Молодцова");
         $("[data-test-id=phone] input").setValue("+79160000000");
         $("[data-test-id=agreement]").click();
@@ -40,7 +40,7 @@ public class ChromeTest {
 
     @Test
     void bankCardNegativeNameTest() {
-        open("http://localhost:9999");
+        open("http://localhost:9999/");
         $("[data-test-id=name] input").setValue("Daria Molodtsova");
         $("[data-test-id=phone] input").setValue("+79160000000");
         $("[data-test-id=agreement]").click();
@@ -50,7 +50,7 @@ public class ChromeTest {
 
     @Test
     void bankCardNegativePhoneTest() {
-        open("http://localhost:9999");
+        open("http://localhost:9999/");
         $("[data-test-id=name] input").setValue("Дарья Молодцова");
         $("[data-test-id=phone] input").setValue("89160000000");
         $("[data-test-id=agreement]").click();
@@ -60,7 +60,7 @@ public class ChromeTest {
 
     @Test
     void bankCardNoClickTest() {
-        open("http://localhost:9999");
+        open("http://localhost:9999/");
         $("[data-test-id=name] input").setValue("Дарья Молодцова");
         $("[data-test-id=phone] input").setValue("+79160000000");
         $("button").click();
@@ -69,7 +69,7 @@ public class ChromeTest {
 
     @Test
     void bankCardEmptyNameTest() {
-        open("http://localhost:9999");
+        open("http://localhost:9999/");
         $("[data-test-id=phone] input").setValue("+79160000000");
         $("[data-test-id=agreement]").click();
         $("button").click();
@@ -78,7 +78,7 @@ public class ChromeTest {
 
     @Test
     void bankCardEmptyPhoneTest() {
-        open("http://localhost:9999");
+        open("http://localhost:9999/");
         $("[data-test-id=name] input").setValue("Дарья Молодцова");
         $("[data-test-id=agreement]").click();
         $("button").click();
