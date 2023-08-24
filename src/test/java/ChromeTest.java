@@ -11,23 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class ChromeTest {
-    private WebDriver driver;
-
-    @BeforeAll
-    public static void setupAll(){
-        WebDriverManager.chromedriver().setup();
-    }
-
-    @BeforeEach
-    void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-        driver.get("http://localhost:9999/");
-    }
-
+    
     @Test
     void bankCardPositiveTest() {
         open("http://localhost:9999/");
